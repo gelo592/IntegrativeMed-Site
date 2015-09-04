@@ -1,0 +1,26 @@
+// colors
+// ===========================================
+$blue_lt: #ACC6DF;
+$blue_md_lt: #7AA3CB;
+$blue: #598CBE;
+$blue_dk: #3874b0;
+$green: #93ba58;
+$green_dk: #6C8A51;
+$contrast_text: #fff;
+
+$grey: #ddd;
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+}
+$roboto: Roboto, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+// font
+// ===========================================
+// size
+$regular_readin: 17px;
+$page_title: 2px;
+$page_subtitle: 2px;
+$section_title: 2px;
+$section_title_sm: 2px;

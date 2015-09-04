@@ -1,0 +1,31 @@
+extends ./layout.jade
+
+block content
+  .index
+    include ./carousel.jade
+    .container-fluid
+      .row.section
+        .col-sm-4.col-sm-offset-2.push-over.col-xs-10.col-xs-offset-1
+          h3 New to the Clinic?
+          p Learn what your role is in our health partnership, and find new patient documents.
+          a.btn.btn-default(href="new_patient.html") Learn More
+        .col-sm-4.col-sm-offset-0.push-over-r.col-xs-10.col-xs-offset-1
+          h3 New to Acupuncture?
+          p Check out our FAQ page to learn more about this ancient healing tradition.
+          a.btn.btn-default(href="acupuncture.html") Learn More
+      .row.section.colorme
+        .col-sm-4.col-sm-offset-2.push-over.col-xs-10.col-xs-offset-1
+          h3 Listen to Dr. Link on the radio
+          p
+            | Tune in to Dr. Link's monthly health segment on KWOS Open Air
+            | and his yearly segment on KOPN Your Health Matters.
+            | If you want to catch up on previous episodes, check out the
+            | archive.
+          a.btn.btn-default(href="radio.html") Archive
+        .col-sm-4.col-sm-offset-0.push-over-r.col-xs-10.col-xs-offset-1
+          #audio-player
+            h3 Paralyzed Man Walks Again!
+            p
+              | Here is a taste of Dr. Link's radio show. Listen as he talks
+              | about the latest medical findings on the air.
+            audio#audio(src='https://mgmt.firststreaming.com/av/9a4f858e81156ed05718bcd6cc4d431a.mp3', controls='controls')
