@@ -89,7 +89,7 @@ ul.bare-list {
 .footer .big a {
   font-size: 16px; }
 .footer .cap-region {
-  border-right: 1px solid;
+  border-right: 1px solid #000;
   float: right;
   padding-left: 10px; }
 
