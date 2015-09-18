@@ -6,7 +6,6 @@ $(function() {
       $(window).resize(function() {
         var h = carousel.height();
         var w = carousel.width();
-        console.log(h, w);
         $(".info-blob").height(h * 0.85);
         $(".info-blob").width(h * 0.85);
         $(".blob-title").css("font-size", h * 0.15);

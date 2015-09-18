@@ -194,7 +194,17 @@ ul.bare-list {
     padding: 10px;
     top: 10px;
     right: 10px; }
-  .nutrition .food-block .food-text {
+  .nutrition .food-block:hover .photo-cred {
+    display: block;
+    position: absolute;
+    right: 20px;
+    bottom: 17px;
+    color: #fff; }
+    .nutrition .food-block:hover .photo-cred a {
+      color: #fff; }
+      .nutrition .food-block:hover .photo-cred a:hover {
+        color: #93ba58; }
+  .nutrition .food-block .food-text, .nutrition .food-block .photo-cred {
     display: none; }
 .nutrition .section-food {
   text-align: center;

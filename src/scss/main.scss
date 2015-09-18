@@ -275,9 +275,23 @@ ul.bare-list {
         top: 10px;
         right: 10px;
       }
+      .photo-cred {
+        display: block;
+        position: absolute;
+        right: 20px;
+        bottom: 17px;
+        color: #fff;
+
+        a {
+          color: #fff;
+          &:hover {
+            color: $green;
+          }
+        }
+      }
     }
 
-    .food-text {
+    .food-text, .photo-cred {
       display: none;
     }
 
