@@ -7,6 +7,9 @@ block content
         .row.section
           .col-sm-10.col-sm-offset-1.centerize
             .col-sm-4.art
+                h3: a.article-toggle(data-toggle='modal', data-target='#sugah') Sugar and Diabetes
+                p Straight talk on diabetes and the effects of sugar consumption.
+            .col-sm-4.art
                 h3: a.article-toggle(data-toggle='modal', data-target='#prevent') Prevention
                 p The four keys to optimal health and prevention - where Integrative Medicine shines!
             .col-sm-4.art
@@ -21,6 +24,13 @@ block content
             .col-sm-4.art
                 h3: a.article-toggle(data-toggle='modal', data-target='#eat') Eat Well!
                 p Find out more about the healthiest foods on the planet.
+            .col-sm-4.art
+                h3: a.article-toggle(data-toggle='modal', data-target='#probio') Probiotics and Health
+                p Bacteria are our buddies, take care of them and they’ll take care of you!
+        .modal.fade(id='sugah')
+          .modal-dialog
+            button(type="button", class="close", data-dismiss="modal", aria-label="Close"): span(aria-hidden="true") &times;
+            iframe.article-frame(src='docs/DiabetesAndSugar.pdf#zoom=100')
         .modal.fade(id='prevent')
           .modal-dialog
             button(type="button", class="close", data-dismiss="modal", aria-label="Close"): span(aria-hidden="true") &times;
@@ -36,8 +46,12 @@ block content
         .modal.fade(id='gi')
           .modal-dialog
             button(type="button", class="close", data-dismiss="modal", aria-label="Close"): span(aria-hidden="true") &times;
-            iframe.article-frame(src='docs/GI\ Health.pdf#zoom=100')
+            iframe.article-frame(src='docs/GIHealth.pdf#zoom=100')
         .modal.fade(id='eat')
           .modal-dialog
             button(type="button", class="close", data-dismiss="modal", aria-label="Close"): span(aria-hidden="true") &times;
             iframe.article-frame(src='docs/EatWell.pdf#zoom=100')
+        .modal.fade(id='probio')
+          .modal-dialog
+            button(type="button", class="close", data-dismiss="modal", aria-label="Close"): span(aria-hidden="true") &times;
+            iframe.article-frame(src='docs/Probiotics.pdf#zoom=100')
