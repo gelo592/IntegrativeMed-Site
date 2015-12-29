@@ -7,30 +7,37 @@
     .item.slide.active
       img.image-responsive.center-block(src="img/carousel-1-min.jpg")
       .carousel-caption
-        .info-blob
-          .blob
-            p.blob-title Hours:
-            p.blob-info Monday-Friday
-            p.blob-info 7:30am-4pm
+        .col-xs-12.col-sm-10.col-sm-offset-1.carousel-info-box
+          h1.cbox-head The Optimum Diet and Nutritional Supplements for Health and Healing
+          p Health Seminar with Dr. Link
+          p Jan 5 & Jan 9
+          a.btn.btn-default.cbox-btn(href="presentations.html#events") Learn More
     .item.slide
       img.image-responsive.center-block(src="img/carousel-2-min.jpg")
       .carousel-caption
-        .info-blob
-          .blob
-            p.blob-title: a.blob-glyph(href="https://goo.gl/maps/6lP2I") Location:
-            p.blob-info-sm 999 Diamond Ridge Dr
-            p.blob-info-sm Suite 201
-            p.blob-info-sm Jefferson City, MO
-            p.blob-info-sm 65109
+        #fleur.carousel-info-box.row
+          .col-xs-10.col-xs-offset-1
+            h1.cbox-head Listen to Dr. Link on the radio
+          .col-xs-10.col-xs-offset-1.col-sm-5.col-sm-offset-1.col-md-6.col-md-offset-1.col-lg-5.col-lg-offset-1
+            p.lil-fo
+              | Tune in to Dr. Link's health segments on KWOS Open Air
+              | and on KOPN Your Health Matters.
+          .col-sm-5.hidden-xs.col-md-6.col-md-offset-0.col-lg-5
+            #audio-player
+              p.lil-fo Hear the latest:
+              p.lil-fo.radio-title 'Sugar and Cookies!'
+              audio#audio(src='https://mgmt.firststreaming.com/av/65a3951dc8e9ef1c0010bfb63318de47.mp3', controls='controls')
+          .col-xs-10.col-xs-offset-1
+            a.btn.btn-default.cbox-btn(href="radio.html") Check the Archive
     .item.slide
       img.image-responsive.center-block(src="img/carousel-3-min.jpg")
       .carousel-caption
-        .info-blob
-          .blob
-            p.blob-title Contact:
-            p.blob-info-sm (573) 632-5585
-            p.blob-info-sm Call for appointments
-            p.blob-info-sm or for a supplement refill.
+        .col-xs-10.col-xs-offset-1.carousel-info-box
+          h1.cbox-head Need Supplements?
+          p Call in to order a supplement refill
+          p or check out the Integrative Medicine Shoppe.
+          a.btn.btn-default.cbox-btn(href="tel:+15736325585") Call now
+
   a.left.carousel-control(href="#myCarousel", role="button" data-slide="prev")
     span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
     span.sr-only Previous
