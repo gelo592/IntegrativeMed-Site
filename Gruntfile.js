@@ -464,8 +464,8 @@ module.exports = function(grunt) {
     , 'build_js'
     , 'build_lib'
     , 'build_pages'
-    , 'build_styles'
     , 'build_jade'
+    , 'build_styles'
   ]);
 
   grunt.registerTask('build_docs', [

@@ -7,19 +7,38 @@ block content
     .row.section
       .col-sm-offset-2.col-sm-8
         ul.nav.nav-tabs#tabbies
-          li.active(role="presentation"): a(href="#kwos", aria-controls="kwos", aria-expanded="true", role="tab", data-toggle="tab")
+          li(role="presentation"): a(href="#kwos", aria-controls="kwos", aria-expanded="false", role="tab", data-toggle="tab")
             p.big Open Air on KWOS
             p.smallsy KWOS
-          li(role="presentation"): a(href="#kopn", aria-controls="kopn", role="tab", aria-expanded="false", data-toggle="tab")
+          li.active(role="presentation"): a(href="#kopn", aria-controls="kopn", role="tab", aria-expanded="true", data-toggle="tab")
            p.big Your Health Matters on KOPN
            p.smallsy KOPN
         .playlist-wrapper
           .tab-content#tab-content
-            .tab-pane.active#kwos(role='tabpanel')
+            .tab-pane#kwos(role='tabpanel')
               table.playlist.table.table-hover.playlist(role)
                 tbody
-
-                  tr.clickable.active(data-title="Sugar and Cookies", data-src='https://mgmt.firststreaming.com/av/65a3951dc8e9ef1c0010bfb63318de47.mp3')
+                  tr.clickable(data-title="Olive Oil & Health Benefits", data-src="http://kwos.com/wp-content/uploads/2016/06/Chris-Link-062116.mp3?_=1")
+                    td Olive Oil & Health Benefits
+                    td 14:53
+                    td
+                  tr.clickable(data-title='"Purple Pill" & Antibiotics', data-src="http://kwos.com/wp-content/uploads/2016/05/Chris-Link-051716.mp3?_=1")
+                    td "Purple Pill" & Antibiotics
+                    td 17:04
+                    td
+                  tr.clickable(data-title="", data-src="https://mgmt.firststreaming.com/av/c60a3e8c24264431a409633aba65bc77.mp3")
+                    td Minnesota Coronary Experiment
+                    td 14:04
+                    td
+                  tr.clickable(data-title="Women & Heart Disease", data-src="https://mgmt.firststreaming.com/av/06e6efe88c30364124c4e14f42b58ad6.mp3")
+                    td Women & Heart Disease
+                    td 14:11
+                    td
+                  tr.clickable(data-title="Indigestion", data-src="https://mgmt.firststreaming.com/av/eb32bcd6f2e809717fef9ccf78d18881.mp3")
+                    td Indigestion
+                    td 15:36
+                    td
+                  tr.clickable(data-title="Sugar and Cookies", data-src='https://mgmt.firststreaming.com/av/65a3951dc8e9ef1c0010bfb63318de47.mp3')
                     td Sugar and Cookies
                     td 16:06
                     td
@@ -95,9 +114,13 @@ block content
                     td Hypertension, Wheat Sensitivity, and Diabetes Prevention
                     td 15:33
                     td
-            .tab-pane#kopn(role='tabpanel')
+            .tab-pane.active#kopn(role='tabpanel')
               table.playlist.table.table-hover.playlist
                 tbody
+                  tr.clickable.active(data-title="The Best Ideas For Great Health In 2016", data-src='http://kopn.org/dc/yh/2016-01-20%20Your%20Health%20Matters.mp3', data-date='1/20/16')
+                    td The Best Ideas For Great Health In 2016
+                    td 58:03
+                    td 1/20/16
                   tr.clickable(data-title="Check Your 'Gut Health'", data-src='http://kopn.org/dc/yh/08-21-13%20Your%20Health%20Matters.mp3', data-date='8/21/13')
                     td Check Your 'Gut Health'
                     td 55:47
@@ -111,4 +134,4 @@ block content
                     td 54:44
                     td 8/12/09
       .col-sm-offset-2.col-sm-8
-        audio#audio(src='https://mgmt.firststreaming.com/av/65a3951dc8e9ef1c0010bfb63318de47.mp3', controls='')
+        audio#audio(src='http://kopn.org/dc/yh/2016-01-20%20Your%20Health%20Matters.mp3', controls='')

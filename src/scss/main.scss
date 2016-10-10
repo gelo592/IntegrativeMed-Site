@@ -161,18 +161,18 @@ ul.bare-list {
   margin-top: 20px;
 }
 
-
-// page styles
-// ================================================
-// index
-// =============================================
-.index {
   .pully-left {
     float: left;
   }
   .pully-right {
     float: right;
   }
+// page styles
+// ================================================
+// index
+// =============================================
+.index {
+
   .section {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -203,6 +203,18 @@ ul.bare-list {
     img {
       width: 100%;
     }
+  }
+
+  .vidja-color {
+    width: 100%;
+    max-height: 480px;
+    background-color: #3c414c;
+    text-align: center;
+  }
+
+  .vidja-container {
+    width: 320px;
+    margin: 0 auto;
   }
 
   .carousel-caption {
@@ -237,20 +249,27 @@ ul.bare-list {
         margin-bottom: 16px;
       }
 
-    }
-    .cbox-head {
-      color: $blue_dk;
-      font-weight: bold;
-      text-shadow: none;
+      &#vidja {
+        padding: 20px 0;
+      }
+
     }
 
+
     &#fleur {
+      background: rgba(255,255,255,0.36);
+    }
+    &#vidja {
       background: rgba(255,255,255,0.36);
     }
   }
 
 
-
+  .cbox-head {
+    color: $blue_dk;
+    font-weight: bold;
+    text-shadow: none;
+  }
   .blob {
     display: block;
     margin: auto;
@@ -624,8 +643,28 @@ ul.bare-list {
 // presentation
 // =============================================
 .presentation {
-  h3 {
+  h3, h2 {
     color: $green;
+  }
+
+  .vidja-blurb {
+    padding-top: 30px;
+    text-align: center;
+  }
+
+  .grey {
+    background-color: $grey_md;
+  }
+
+  .lt-grey {
+    background-color: $grey_lt;
+  }
+  .vid-row {
+    padding: 60px 0;
+    font-size: 16px;
+  }
+  .vid-box {
+    text-align: center;
   }
 }
 
@@ -765,6 +804,13 @@ ul.bare-list {
       font-size: 15px;
     }
   }
+
+  .presentation {
+    .vid-box {
+      text-align: center;
+      margin: 50% auto;
+    }
+  }
 }
 @media(min-width:421px) and (max-width: 767px) {
   .index {
@@ -788,6 +834,12 @@ ul.bare-list {
       .cbox-btn {
         font-size: 14px;
       }
+    }
+  }
+  .presentation {
+    .vid-box {
+      text-align: center;
+      margin: 50% auto;
     }
   }
 }
