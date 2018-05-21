@@ -2,18 +2,16 @@ extends ./layout.jade
 
 block content
   .index
-    include ./carousel.jade
     .container-fluid
-      .row.section
-        .col-sm-4.col-sm-offset-2.push-over.col-xs-10.col-xs-offset-1
-          h3 New to the Clinic?
-          p Learn what your role is in our health partnership, and find new patient documents.
-          a.btn.btn-default(href="new_patient.html") Learn More
-        .col-sm-4.col-sm-offset-0.push-over-r.col-xs-10.col-xs-offset-1
-          h3 New to Acupuncture?
-          p Check out our FAQ page to learn more about this ancient healing tradition.
-          a.btn.btn-default(href="acupuncture.html") Learn More
-      .row.section.colorme
+      .row.section.bounty-img
+        .bounty-info
+          h1 Reducing and Reversing
+          h1 Alzheimer's
+          p Keynote by Dr. Link
+          p: a(href="https://www.comowellnessconference.com") COMO Wellness Conference
+          p.lil April 21, 2018
+          //p: a(href="tel:+15736325595") Call for an appointment
+      .row.section.colorme.marge-sect
           .col-xs-10.col-xs-offset-1.col-sm-4.col-sm-offset-0.section-lil
             .info-sect.pully-right
               h3.section-head Hours
@@ -30,6 +28,22 @@ block content
               p
                 a(href="tel:+15736325585"): i.fa.fa-phone
                 |  (573) 632-5585
-              p
-                a(href="mailto:integrativemedicine@crmc.org"): i.fa.fa-envelope
-                |  integrativemedicine@crmc.org
+      .row.section
+        .col-sm-5.col-sm-offset-1.push-over.col-xs-10.col-xs-offset-1
+          h3 New to the Clinic?
+          p Learn what your role is in our health partnership, and find new patient documents.
+          a.btn.btn-default(style="font-size: 16px; font-weight: bold;", href="new_patient.html") Docs
+        .col-sm-5.col-sm-offset-0.push-over-r.col-xs-10.col-xs-offset-1
+          h3 New to Acupuncture?
+          p Check out our FAQ page to learn more about this ancient healing tradition.
+          a.btn.btn-default(style="font-size: 16px;", href="acupuncture.html") FAQs
+      //- .row.section
+        iframe(width="320",  height="240", src="https://www.youtube-nocookie.com/embed/6qlEbEOk2Nw?rel=0&amp;showinfo=0", frameborder="0", allowfullscreen)
+      //- .row.section
+        audio#audio(src='http://kwos.com/wp-content/uploads/2016/06/Chris-Link-062116.mp3?_=1', controls='controls')
+      //- .row.section
+        .col-xs-10.col-xs-offset-1.carousel-info-box
+          h1.cbox-head Need Supplements?
+          p Call in to order a supplement refill
+          p or check out the Integrative Medicine Shoppe.
+          a.btn.btn-default.cbox-btn(href="tel:+15736325585") Call now
