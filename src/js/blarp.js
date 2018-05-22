@@ -47,6 +47,16 @@ $(function() {
       e.preventDefault()
       $(this).tab('show')
     })
+
+    $(".videolist").on("click", "tr.clickable", function(e) {
+      e = e.currentTarget;
+
+      var id = $(e).data("source");
+
+      $(".vid-box iframe").attr("src", 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0&amp;amp;showinfo=0');
+      $("tr.active").removeClass("active");
+      $(e).addClass("active");
+    });
   }
 
   attachListeners();

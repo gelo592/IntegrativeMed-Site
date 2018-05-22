@@ -457,15 +457,7 @@ module.exports = function(grunt) {
  * Run with `grunt build`.
  */
   grunt.registerTask('build', [
-     'clean:build'
-    , 'trimtrailingspaces'
-    , 'build_docs'
-    , 'build_img'
-    , 'build_js'
-    , 'build_lib'
-    , 'build_pages'
-    , 'build_jade'
-    , 'build_styles'
+    'build_js',
   ]);
 
   grunt.registerTask('build_docs', [
@@ -522,4 +514,3 @@ module.exports = function(grunt) {
   ]);
 
 }; // end module.exports functiono
-
