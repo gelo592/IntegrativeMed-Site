@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import SubLayout from '../../components/sublayout';
 import { withStyles } from '@material-ui/core/styles';
 import { colors } from '../../constants/constants';
+import withRoot from '../../components/withRoot';
 
 const styles = theme => ({
   para: {
@@ -19,7 +20,7 @@ const styles = theme => ({
 
 const LenonPage = ({ classes }) => (
   <Layout>
-    <SEO title="providers" />
+    <SEO title="Providers : Rachel Lenon" />
     <SubLayout title={'Rachel Lenon, FNP-BC,'}>
     <Grid container justify='center'>
       <Grid item xs={8}>
@@ -57,4 +58,4 @@ const LenonPage = ({ classes }) => (
   </Layout>
 )
 
-export default withStyles(styles)(LenonPage)
+export default withRoot(withStyles(styles)(LenonPage))

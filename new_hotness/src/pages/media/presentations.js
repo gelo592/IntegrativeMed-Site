@@ -1,11 +1,11 @@
 import React from 'react'
-
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import SubLayout from '../../components/sublayout';
 import { Paper, Grid, Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { colors } from '../../constants/constants';
+import withRoot from '../../components/withRoot';
 
 const styles = theme => ({
   paper: {
@@ -32,27 +32,27 @@ const  TalksPage = ({ classes }) => (
       <Grid item>
         <Paper className={classes.paper}>
         <Typography variant={'h6'} className={classes.title}>Alzeihmer's Disease</Typography>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/b615Sknt8eA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title={'alzeihmer\'s disease'} width="560" height="315" src="https://www.youtube.com/embed/b615Sknt8eA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </Paper>
         <Paper className={classes.paper}>
         <Typography variant={'h6'} className={classes.title}>Dietary Supplements For Optimal Health!</Typography>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/MqQ5LZ9ueik" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title={'Dietary Supplements For Optimal Health!'} width="560" height="315" src="https://www.youtube.com/embed/MqQ5LZ9ueik" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </Paper>
         <Paper className={classes.paper}>
         <Typography variant={'h6'} className={classes.title}>Gut Health Seminar</Typography>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/6qlEbEOk2Nw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title='Gut Health Seminar' width="560" height="315" src="https://www.youtube.com/embed/6qlEbEOk2Nw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </Paper>
         <Paper className={classes.paper}>
         <Typography variant={'h6'} className={classes.title}>Advanced Prevention For Caridovascular Disease</Typography>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/ygBZP30y0Ew" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title='Advanced Prevention For Caridovascular Disease' width="560" height="315" src="https://www.youtube.com/embed/ygBZP30y0Ew" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </Paper>
         <Paper className={classes.paper}>
         <Typography variant={'h6'} className={classes.title}>2016 Nutrition Update</Typography>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/zTLPHkq3BE8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title='2016 Nutrition Update' width="560" height="315" src="https://www.youtube.com/embed/zTLPHkq3BE8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </Paper>
         <Paper className={classes.paper}>
         <Typography variant={'h6'} className={classes.title}>The Gut & Chronic Disease</Typography>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/k8lpAVobDOU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title='The Gut & Chronic Disease' width="560" height="315" src="https://www.youtube.com/embed/k8lpAVobDOU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </Paper>
       </Grid>
       {/* <Grid item>
@@ -87,4 +87,4 @@ const  TalksPage = ({ classes }) => (
   </Layout>
 )
 
-export default withStyles(styles)(TalksPage)
+export default withRoot(withStyles(styles)(TalksPage))

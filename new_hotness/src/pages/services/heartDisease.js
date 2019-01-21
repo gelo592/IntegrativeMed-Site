@@ -5,6 +5,7 @@ import SubLayout from '../../components/sublayout';
 import { Grid, Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { colors } from '../../constants/constants';
+import withRoot from '../../components/withRoot';
 
 const styles = theme => ({
   para: {
@@ -24,7 +25,7 @@ const styles = theme => ({
 
 const HeartDiseasePage = ({ classes }) => (
   <Layout>
-    <SEO title="404: Not found" />
+    <SEO title="Cholestoral & Heart Disease" />
     <SubLayout title={'Cholestoral & Heart Disease'}>
     <Grid container justify='center'>
       <Grid item xs={8}>
@@ -40,7 +41,7 @@ const HeartDiseasePage = ({ classes }) => (
       </ul>
     </Typography>
     <Typography className={classes.para}>Advanced Cholesterol & Inflammation Markers</Typography>
-    <Typography>
+    <Typography className={classes.para}>
       <ul>
         <li>Lipid Particle size and number</li>
         <li>Inflammation markers - CRP, MPO, Fibrinogen</li>
@@ -62,4 +63,4 @@ const HeartDiseasePage = ({ classes }) => (
   </Layout>
 )
 
-export default withStyles(styles)(HeartDiseasePage)
+export default withRoot(withStyles(styles)(HeartDiseasePage))

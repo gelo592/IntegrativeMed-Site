@@ -1,11 +1,11 @@
 import React from 'react'
-
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import SubLayout from '../../components/sublayout';
 import { Grid, Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { colors } from '../../constants/constants';
+import withRoot from '../../components/withRoot';
 
 const styles = theme => ({
   para: {
@@ -53,4 +53,4 @@ const FunctionalMedPage = ({ classes }) => (
   </Layout>
 )
 
-export default withStyles(styles)(FunctionalMedPage)
+export default withRoot(withStyles(styles)(FunctionalMedPage))

@@ -4,15 +4,10 @@ import Image from '../components/image'
 import SEO from '../components/seo'
 import { Button, Divider, Grid, Typography, Paper } from '@material-ui/core';
 import logo from '../images/text_logo_w.svg'
-import waves from '../images/just-waves.png'
-import { withStyles, withTheme } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import PhoneIcon from '@material-ui/icons/Call'
-// import { createMuiTheme } from '@material-ui/core/styles';
-// import { green } from '@material-ui/core/colors';
-import { Link } from 'gatsby'
 import { colors } from '../constants/constants';
-
-// export default createMuiTheme({ palette, themeName });
+import withRoot from '../components/withRoot';
 
 const styles = theme => ({
   container: {
@@ -58,6 +53,7 @@ const styles = theme => ({
   },
   link: {
     textAlign: 'center',
+    fontSize: 16,
     color: colors.imc_blue.main,
   },
   header: {
@@ -68,6 +64,7 @@ const styles = theme => ({
     borderBottom: `solid ${colors.imc_blue.main} 4px`,
   },
   subtext: {
+    fontSize: 16,
     textAlign: 'center',
   },
   dividerBlue: {
@@ -87,6 +84,13 @@ const styles = theme => ({
     display: 'flex',
     flex: 1,
     justifyContent: 'center',
+  },
+  paperNoFlex: {
+    padding: '30px 20px',
+    // display: 'flex',
+    // flex: 1,
+    // flexDirection: 'column',
+    // alignItems: 'center',
   },
   paper: {
     padding: '30px 20px',
@@ -112,11 +116,11 @@ class IndexPage extends React.Component {
     return (
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-        <div style={{ height: 400, overflow: 'hidden', position: 'relative', flex: 1 }}>
-          <div style={{ opacity: .7 }}>
+        <div style={{ overflow: 'hidden', position: 'relative', flex: 1 }}>
+          <div style={{ position: 'absolute', width: '100%', opacity: .6, top: '-15vw' }}>
             <Image />
           </div>
-          <Grid container justify='center' style={{position: 'absolute', top: 40 }}>
+          <Grid container justify='center' style={{position: 'relative', paddingTop: '4.5vw', paddingBottom: '9vw'}}>
             <Grid item xs={12} style={{ display: 'flex', flex: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
               <img src={logo} alt="Integrative Medicine Clinic" style={{ width: '80%', maxWidth: 800, margin: 10 }} />
               <Button className={classes.button} variant="contained" href="/patients">New Patients</Button>
@@ -124,40 +128,36 @@ class IndexPage extends React.Component {
           </Grid>
         </div>
         <Divider className={classes.divider} />
-        <section className={classes.sectionWrap} style={{ backgroundColor: colors.imc_yellow.light }}>
+        <section className={classes.sectionWrap} style={{ backgroundColor: colors.imc_green.light }}>
           <div className={classes.infoSection}>
-        <Grid container spacing={16} justify={'center'}>
-          <Grid item lg={2}>
-            <Paper className={classes.paper}>
-            <Typography className={classes.header} variant={'h5'}>Hours</Typography>
-            <Typography className={classes.subtext}>Monday-Friday</Typography>
-            <Typography className={classes.subtext}>7:30am-4pm</Typography>
+            <Paper className={classes.paperNoFlex}>
+              <Grid container spacing={40} justify={'center'}>
+                <Grid item xs={12} sm={'auto'}>
+                  <Typography className={classes.header} variant={'h5'}>Hours</Typography>
+                  <Typography className={classes.subtext}>Monday-Friday</Typography>
+                  <Typography className={classes.subtext}>7:30am-4pm</Typography>
+                </Grid>
+                <Grid item xs={12} sm={'auto'}>
+                  <Typography className={classes.header} variant={'h5'}>Location</Typography>
+                  <Typography className={classes.subtext}>999 Diamond Ridge Suite 201</Typography>
+                  <Typography className={classes.subtext}>Jefferson City, MO 65109</Typography>
+                  <a href="https://goo.gl/maps/6lP2I" ><Typography className={classes.link}>Get Directions</Typography></a>
+                </Grid>
+                <Grid item xs={12} sm={'auto'}>
+                  <Typography className={classes.header} variant={'h5'}>Contact</Typography>
+                  <div className={classes.iconInfo}>
+                    <a href={'tel:+15736325585'} className={classes.iconInfo}>
+                      <PhoneIcon className={classes.link} />
+                      <Typography className={classes.link}>(573) 632-5585</Typography>
+                    </a>
+                  </div>
+                  <div className={classes.iconInfo}>
+                    <Typography className={classes.subtext}>Fax: </Typography>
+                    <Typography style={{ paddingLeft: 4 }} className={classes.subtext}>1(844) 736-2971</Typography>
+                  </div>
+                </Grid>
+              </Grid>
             </Paper>
-          </Grid>
-          <Grid item lg={3}>
-            <Paper className={classes.paper}>
-            <Typography className={classes.header} variant={'h5'}>Location</Typography>
-            <Typography className={classes.subtext}>999 Diamond Ridge Suite 201</Typography>
-            <Typography className={classes.subtext}>Jefferson City, MO 65109</Typography>
-            <a href="https://goo.gl/maps/6lP2I" ><Typography className={classes.link}>Get Directions</Typography></a>
-            </Paper>
-          </Grid>
-          <Grid item lg={2}>
-            <Paper className={classes.paper}>
-            <Typography className={classes.header} variant={'h5'}>Contact</Typography>
-            <div className={classes.iconInfo}>
-              <a href={'tel:+15736325585'} className={classes.iconInfo}>
-                <PhoneIcon  className={classes.link}/>
-                <Typography className={classes.link}>(573) 632-5585</Typography>
-              </a>
-            </div>
-            <div className={classes.iconInfo}>
-              <Typography className={classes.subtext}>Fax: </Typography>
-              <Typography style={{paddingLeft: 4}} className={classes.subtext}>1(844) 736-2971</Typography>
-            </div>
-            </Paper>
-          </Grid>
-        </Grid>
         </div>
         </section>
         <Divider className={classes.divider} />
@@ -287,4 +287,4 @@ class IndexPage extends React.Component {
   }
 }
 
-export default withStyles(styles)(IndexPage)
+export default withRoot(withStyles(styles)(IndexPage))

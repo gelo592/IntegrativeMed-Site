@@ -1,11 +1,11 @@
 import React from 'react'
-
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import SubLayout from '../../components/sublayout';
 import { Paper, Grid, Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { colors } from '../../constants/constants';
+import withRoot from '../../components/withRoot';
 
 const styles = theme => ({
   paper: {
@@ -48,7 +48,7 @@ const styles = theme => ({
 
 const AcupuncturePage = ({ classes }) => (
   <Layout>
-    <SEO title="404: Not found" />
+    <SEO title="Acupuncture" />
     <SubLayout title={'Acupuncture'}>
     <Grid container justify='center' spacing={32}>
       <Grid item xs={8}>
@@ -267,4 +267,4 @@ const AcupuncturePage = ({ classes }) => (
   </Layout>
 )
 
-export default withStyles(styles)(AcupuncturePage)
+export default withRoot(withStyles(styles)(AcupuncturePage))

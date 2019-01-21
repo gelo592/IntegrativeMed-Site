@@ -1,7 +1,7 @@
 import { navigate } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import logo from '../images/new_more_logo.png'
+import logo from '../images/logo_top.svg'
 import { Typography, Drawer, List, Divider, IconButton, ListItem, ListItemText } from '@material-ui/core';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import HamburgerIcon from '@material-ui/icons/Menu';
@@ -11,6 +11,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { colors } from '../constants/constants';
 import { Hidden } from '@material-ui/core';
 import _ from 'lodash';
+import withRoot from './withRoot';
 
 const drawerWidth = 240;
 
@@ -21,10 +22,11 @@ const styles = theme => ({
   },
   button: {
     textDecoration: 'none',
-    fontSize: 20,
-    textTransform: 'capitalize',
+    fontSize: 16,
+    textTransform: 'uppercase',
+    letterSpacing: 1,
     padding: '12px 10px',
-    color: colors.imc_blue.main,
+    color: colors.imc_blue.light,
   },
   drawer: {
     width: drawerWidth,
@@ -135,11 +137,11 @@ class Header extends React.Component {
           <nav style={{ display: 'flex', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             {
               menuLinks.map(link =>
-                (<li key={link.name} style={{ 'listStyleType': 'none', marginLeft: 2, textDecoration: 'none' }}>
+                (<li key={link.name} style={{ 'listStyleType': 'none', marginBottom: 8, textDecoration: 'none' }}>
                   {link.isLink && <Button href={link.link} className={classes.button}>{link.displayName}</Button>}
                   {!(link.isLink) && (
                     <div>
-                      <Tooltip title={this.renderSublinks(link, classes)} interactive classes={{ tooltip: classes.dropdown }}>
+                      <Tooltip title={this.renderSublinks(link, classes)} interactive classes={{ tooltip: classes.dropdown }} placement="bottom">
                         <Button className={classes.button}>
                           {link.displayName}
                         </Button>
@@ -162,4 +164,4 @@ Header.defaultProps = {
   siteTitle: ``,
 }
 
-export default withStyles(styles)(Header)
+export default withRoot(withStyles(styles)(Header))

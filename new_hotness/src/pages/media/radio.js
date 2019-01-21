@@ -1,13 +1,14 @@
 import React from 'react'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
-import { Fab, Grid, Typography, Button, Paper } from '@material-ui/core';
+import { Fab, Grid, Typography, Paper } from '@material-ui/core';
 import SubLayout from '../../components/sublayout';
 import { radio } from '../../constants/constants';
 import { withStyles } from '@material-ui/core/styles';
 import { colors } from '../../constants/constants';
 import PlayIcon from '@material-ui/icons/PlayCircleOutline';
-import _ from 'lodash';
+import { graphql } from 'gatsby';
+import withRoot from '../../components/withRoot';
 
 const styles = theme => ({
   buttonSection: {
@@ -79,7 +80,6 @@ class RadioPage extends React.Component {
   }
 
   _handlePlay = (episode) => {
-    console.log(episode);
     this.setState({ currEp: episode }, this._audio.play);
   }
 
@@ -88,7 +88,7 @@ class RadioPage extends React.Component {
     const { episodes, currEp } = this.state;
     return (
       <Layout>
-        <SEO title="radio" />
+        <SEO title="Dr. Link on the radio" />
         <SubLayout title={"Radio"}>
           <Grid container spacing={16} justify={'center'}>
             {radio.sort((a, b) => b.title - a.title).map(ep => (
@@ -143,4 +143,4 @@ export const query = graphql`
   }
 `
 
-export default withStyles(styles)(RadioPage)
+export default withRoot(withStyles(styles)(RadioPage))

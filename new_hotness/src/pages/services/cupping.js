@@ -1,11 +1,11 @@
 import React from 'react'
-
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import SubLayout from '../../components/sublayout';
 import { Grid, Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { colors } from '../../constants/constants';
+import withRoot from '../../components/withRoot';
 
 const styles = theme => ({
   para: {
@@ -24,7 +24,7 @@ const styles = theme => ({
 });
 const CuppingPage = ({ classes }) => (
   <Layout>
-    <SEO title="404: Not found" />
+    <SEO title="Cupping" />
     <SubLayout title={'Cupping'}>
     <Grid container justify='center'>
       <Grid item xs={8}>
@@ -38,4 +38,4 @@ const CuppingPage = ({ classes }) => (
   </Layout>
 )
 
-export default withStyles(styles)(CuppingPage)
+export default withRoot(withStyles(styles)(CuppingPage))

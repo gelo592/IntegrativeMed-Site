@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Integratice Medicine Clinic JCMO`,
+    description: `Applying the principles of integrative and functional medicine to improve lifestyle and nutrition.`,
+    author: `gelink`,
     menuLinks: [
       {
         name: 'home',
@@ -65,13 +65,13 @@ module.exports = {
           },
           {
             name: 'funcmed',
-            displayName: 'Functional Medicine',
+            displayName: 'Functional Medical Testing',
             link: '/services/functionalMed',
             isLink: true,
           },
           {
             name: 'laser',
-            displayName: 'Laser',
+            displayName: 'Low-level Laser',
             link: '/services/lllaser',
             isLink: true,
           },
@@ -114,7 +114,7 @@ module.exports = {
       {
         name: 'patients',
         displayName: 'for patients',
-        link: '/patients',
+        link: '/patient/patients',
         isLink: true,
       },
       // {
@@ -136,7 +136,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
+        name: ``,
         path: `${__dirname}/src/images`,
       },
     },
@@ -161,8 +161,15 @@ module.exports = {
         icon: `src/images/logo_w.svg`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
+    'gatsby-plugin-remove-serviceworker'
   ],
 }

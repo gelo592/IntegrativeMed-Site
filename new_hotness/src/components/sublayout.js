@@ -1,9 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import './layout.css'
 import { Typography, Grid } from '@material-ui/core'
 import { colors } from '../constants/constants'
 import { withStyles } from '@material-ui/core/styles'
+import withRoot from './withRoot';
 
 const styles = theme => ({
   header: {
@@ -28,7 +27,7 @@ const styles = theme => ({
 class SubLayout extends React.Component {
   render() {
     const { title, classes, children } = this.props;
-      return (<Grid container style={{ marginTop: 6 }}>
+      return (<Grid container>
             <Grid xs={12} item className={classes.header}>
               <Typography className={classes.headerText} variant={'h2'}>{title}</Typography>
             </Grid>
@@ -39,4 +38,4 @@ class SubLayout extends React.Component {
   }
 }
 
-export default withStyles(styles)(SubLayout)
+export default withRoot(withStyles(styles)(SubLayout))
