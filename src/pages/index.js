@@ -1,11 +1,11 @@
 import React from 'react'
+import { navigate } from 'gatsby'
 import Layout from '../components/layout'
 import Image from '../components/image'
 import SEO from '../components/seo'
 import { Button, Divider, Grid, Typography, Paper } from '@material-ui/core';
 import logo from '../images/text_logo_w.svg'
 import { withStyles } from '@material-ui/core/styles';
-import PhoneIcon from '@material-ui/icons/Call'
 import { colors } from '../constants/constants';
 import withRoot from '../components/withRoot';
 
@@ -87,6 +87,7 @@ const styles = theme => ({
   },
   paperNoFlex: {
     padding: '30px 20px',
+    width: '70%',
     // display: 'flex',
     // flex: 1,
     // flexDirection: 'column',
@@ -120,10 +121,10 @@ class IndexPage extends React.Component {
           <div style={{ position: 'absolute', width: '100%', opacity: .6, top: '-15vw' }}>
             <Image />
           </div>
-          <Grid container justify='center' style={{position: 'relative', paddingTop: '4.5vw', paddingBottom: '9vw'}}>
+          <Grid container justify='center' style={{position: 'relative', paddingTop: '3.5vw', paddingBottom: '5vw'}}>
             <Grid item xs={12} style={{ display: 'flex', flex: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-              <img src={logo} alt="Integrative Medicine Clinic" style={{ width: '80%', maxWidth: 800, margin: 10 }} />
-              <Button className={classes.button} variant="contained" href="/patients">New Patients</Button>
+              <img src={logo} alt="Integrative Medicine Clinic" style={{ width: '76%', maxWidth: 800, margin: 10 }} />
+              <Button className={classes.button} variant="contained" onClick={() => navigate('/patient/patients')}>New Patients</Button>
             </Grid>
           </Grid>
         </div>
@@ -131,24 +132,30 @@ class IndexPage extends React.Component {
         <section className={classes.sectionWrap} style={{ backgroundColor: colors.imc_green.light }}>
           <div className={classes.infoSection}>
             <Paper className={classes.paperNoFlex}>
-              <Grid container spacing={40} justify={'center'}>
-                <Grid item xs={12} sm={'auto'}>
+              <Grid container spacing={16} justify={'center'}>
+                <Grid item xs={12} sm={4}>
                   <Typography className={classes.header} variant={'h5'}>Hours</Typography>
                   <Typography className={classes.subtext}>Monday-Friday</Typography>
                   <Typography className={classes.subtext}>7:30am-4pm</Typography>
                 </Grid>
-                <Grid item xs={12} sm={'auto'}>
+                <Grid item xs={12} sm={4}>
                   <Typography className={classes.header} variant={'h5'}>Location</Typography>
                   <Typography className={classes.subtext}>999 Diamond Ridge Suite 201</Typography>
                   <Typography className={classes.subtext}>Jefferson City, MO 65109</Typography>
                   <a href="https://goo.gl/maps/6lP2I" ><Typography className={classes.link}>Get Directions</Typography></a>
                 </Grid>
-                <Grid item xs={12} sm={'auto'}>
+                <Grid item xs={12} sm={4}>
                   <Typography className={classes.header} variant={'h5'}>Contact</Typography>
                   <div className={classes.iconInfo}>
                     <a href={'tel:+15736325585'} className={classes.iconInfo}>
-                      <PhoneIcon className={classes.link} />
-                      <Typography className={classes.link}>(573) 632-5585</Typography>
+                      <Typography className={classes.subtext}>Clinic: </Typography>
+                      <Typography className={classes.link}> (573) 632-5585</Typography>
+                    </a>
+                  </div>
+                  <div className={classes.iconInfo}>
+                    <a href={'tel:+5736168899'} className={classes.iconInfo}>
+                      <Typography className={classes.subtext}>Shoppe: </Typography>
+                      <Typography className={classes.link}> (573) 616-8899</Typography>
                     </a>
                   </div>
                   <div className={classes.iconInfo}>

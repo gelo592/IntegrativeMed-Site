@@ -1,5 +1,7 @@
 build
+public
 bucketpolicy.txt
+.cache
 ####### sass ########
 .sass-cache/
 *.css.map

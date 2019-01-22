@@ -147,6 +147,13 @@ module.exports = {
         path: `${__dirname}/src/static/audio`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `docs`,
+        path: `${__dirname}/src/static/docs`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -161,6 +168,7 @@ module.exports = {
         icon: `src/images/logo_w.svg`, // This path is relative to the root of the site.
       },
     },
+    "gatsby-plugin-stylus",
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {

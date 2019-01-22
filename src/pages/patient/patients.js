@@ -6,6 +6,7 @@ import { Grid, Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { colors } from '../../constants/constants';
 import withRoot from '../../components/withRoot';
+import { graphql } from 'gatsby';
 
 const styles = theme => ({
   para: {
@@ -23,9 +24,10 @@ const styles = theme => ({
   }
 });
 
-const PatientPage = ({ classes }) => (
+const PatientPage = ({ classes, data }) => (
   <Layout>
     <SEO title="New Patient Information" />
+    {console.log(data)}
     <SubLayout title={'Patients'}>
     <Grid container justify={'center'}>
         <Grid item xs={8}>
@@ -58,12 +60,30 @@ const PatientPage = ({ classes }) => (
         concerns and embark on a collaborative journey to reclaim your health and vitality.
       </Typography>
       <Typography className={classes.header} variant={'h5'}>New Patient?</Typography>
-      <Typography className={classes.para}> Please complete this <a className={classes.link} href='docs/IMC_NewPatientPacket.pdf'>new patient form</a> and bring it with you to your first appointment.</Typography>
+      <Typography className={classes.para}> Please complete this <a className={classes.link} href={data.allFile.edges[0].node.publicURL}>new patient form</a> and bring it with you to your first appointment.</Typography>
       <Typography className={classes.para}> Please bring your medications and supplements to your appointment.</Typography>
     </Grid>
     </Grid>
     </SubLayout>
   </Layout>
 )
+
+export const query = graphql`
+  query PatientPageQuery {
+    allFile(filter: { sourceInstanceName: { eq: "docs" } }) {
+      edges {
+        node {
+          id
+          extension
+          dir
+          modifiedTime
+          publicURL
+          name
+          relativePath
+        }
+      }
+    }
+  }
+`
 
 export default withRoot(withStyles(styles)(PatientPage))

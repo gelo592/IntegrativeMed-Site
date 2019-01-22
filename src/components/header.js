@@ -73,7 +73,7 @@ class Header extends React.Component {
     const media = _.find(menuLinks, { name: 'media' }).sublinks;
     return (
       <div style={{ boxShadow: '#80808059 0px 1px 4px 0px', zIndex: 100, display: 'flex', flex: 1, flexDirection: 'column', alignItems: 'center'}} >
-        <img src={logo} alt="Integrative Medicine Clinic" style={{ width: 300, margin: 10 }} />
+        <img src={logo} alt="Integrative Medicine Clinic" style={{ width: 140, margin: 10 }} />
         <Hidden mdUp>
             <IconButton style={{ position: 'absolute', top: 20, left: 20}} onClick={this._handleOpen}>
               {<HamburgerIcon />}
@@ -138,7 +138,7 @@ class Header extends React.Component {
             {
               menuLinks.map(link =>
                 (<li key={link.name} style={{ 'listStyleType': 'none', marginBottom: 8, textDecoration: 'none' }}>
-                  {link.isLink && <Button href={link.link} className={classes.button}>{link.displayName}</Button>}
+                  {link.isLink && <Button onClick={() => navigate(link.link)} className={classes.button}>{link.displayName}</Button>}
                   {!(link.isLink) && (
                     <div>
                       <Tooltip title={this.renderSublinks(link, classes)} interactive classes={{ tooltip: classes.dropdown }} placement="bottom">

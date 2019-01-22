@@ -54,7 +54,7 @@ class Footer extends React.Component {
           <a href={'tel:+15736325585'} className={classes.iconInfo}><Typography className={classes.link}>Clinic: (573) 632-5585</Typography></a>
           <a href={'tel:+15736168899'} className={classes.iconInfo}><Typography className={classes.link}>Shoppe: (573) 616-8899</Typography></a>
           <Typography className={classes.subtext}>Fax: 1(844) 736-2971</Typography>
-          <a href={'mailTo:hello@imc-jcmo.com'} className={classes.email}><Typography className={classes.link}>hello@imc-jcmo.com</Typography></a>
+          <a href={'mailTo:info@imc-jcmo.com'} className={classes.email}><Typography className={classes.link}>info@imc-jcmo.com</Typography></a>
           <div>
           <IconButton component={'a'} href={'https://www.facebook.com/IMC.jcmo/'}><FacebookBox /></IconButton>
           <IconButton component={'a'} href={'https://www.instagram.com/imc.jcmo/'}><Instagram /></IconButton>
