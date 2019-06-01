@@ -9,16 +9,17 @@
     "@material-ui/icons": "3.0.1",
     "babel-plugin-styled-components": "1.10.0",
     "classnames": "2.2.6",
-    "gatsby": "2.0.79",
+    "gatsby": "2.3.25",
     "gatsby-image": "^2.0.20",
+    "gatsby-plugin-google-analytics": "2.0.18",
     "gatsby-plugin-manifest": "^2.0.9",
     "gatsby-plugin-offline": "^2.0.16",
     "gatsby-plugin-react-helmet": "^3.0.2",
     "gatsby-plugin-remove-serviceworker": "1.0.0",
-    "gatsby-plugin-sharp": "^2.0.14",
+    "gatsby-plugin-sharp": "2.0.35",
     "gatsby-plugin-styled-components": "3.0.4",
     "gatsby-plugin-stylus": "2.0.3",
-    "gatsby-source-filesystem": "^2.0.8",
+    "gatsby-source-filesystem": "2.0.29",
     "gatsby-transformer-sharp": "^2.1.8",
     "jss": "latest",
     "lodash": "4.17.11",
@@ -42,7 +43,8 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "devDependencies": {
-    "prettier": "^1.15.2"
+    "prettier": "^1.15.2",
+    "s3": "git://github.com/andrewrk/node-s3-client.git#0ed018699843a2d3cc1cb37399ead1f76a72576d"
   },
   "repository": {
     "type": "git",

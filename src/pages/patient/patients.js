@@ -27,7 +27,6 @@ const styles = theme => ({
 const PatientPage = ({ classes, data }) => (
   <Layout>
     <SEO title="New Patient Information" />
-    {console.log(data)}
     <SubLayout title={'Patients'}>
     <Grid container justify={'center'}>
         <Grid item xs={8}>

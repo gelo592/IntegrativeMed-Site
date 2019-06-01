@@ -6,6 +6,7 @@ import { Paper, Grid, Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { colors } from '../../constants/constants';
 import withRoot from '../../components/withRoot';
+import { graphql } from 'gatsby';
 
 const styles = theme => ({
   paper: {
@@ -24,35 +25,51 @@ const styles = theme => ({
   }
 });
 
-const  TalksPage = ({ classes }) => (
+const TalksPage = ({ classes, data }) => (
   <Layout>
+    {console.log(data)}
     <SEO title="talks" />
     <SubLayout title={'Presentations'}>
     <Grid container justify={'center'} spacing={40}>
       <Grid item>
         <Paper className={classes.paper}>
+        <Typography variant={'h6'} className={classes.title}>Better Bones Naturally!</Typography>
+        <iframe title={'Better Bones Naturally!'} width="560" height="315" src="https://www.youtube.com/embed/5f50YiZ9s74" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        </Paper>
+        <Paper className={classes.paper}>
+        <Typography variant={'h6'} className={classes.title}>What to Eat and When to Eat It</Typography>
+        <iframe title={'What to Eat and When to Eat It'} width="560" height="315" src="https://www.youtube.com/embed/bGcLba8oywY" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        </Paper>
+        <Paper className={classes.paper}>
+        <Typography variant={'h6'} className={classes.title}>Fasting for Health, Wellness, and Disease Prevention</Typography>
+        <iframe title={'Fasting for Health, Wellness, and Disease Prevention'} width="560" height="315" src="https://www.youtube.com/embed/gurt3OVhnz4" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        {/* <video style={{ maxWidth: 560}} controls>
+          <source src={data.allFile.edges[0].node.publicURL} type="video/mp4" />
+        </video> */}
+        </Paper>
+        <Paper className={classes.paper}>
         <Typography variant={'h6'} className={classes.title}>Alzeihmer's Disease</Typography>
-        <iframe title={'alzeihmer\'s disease'} width="560" height="315" src="https://www.youtube.com/embed/b615Sknt8eA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title={'Alzeihmer\'s Disease'} width="560" height="315" src="https://www.youtube.com/embed/b615Sknt8eA" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </Paper>
         <Paper className={classes.paper}>
         <Typography variant={'h6'} className={classes.title}>Dietary Supplements For Optimal Health!</Typography>
-        <iframe title={'Dietary Supplements For Optimal Health!'} width="560" height="315" src="https://www.youtube.com/embed/MqQ5LZ9ueik" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title={'Dietary Supplements For Optimal Health!'} width="560" height="315" src="https://www.youtube.com/embed/MqQ5LZ9ueik" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </Paper>
         <Paper className={classes.paper}>
         <Typography variant={'h6'} className={classes.title}>Gut Health Seminar</Typography>
-        <iframe title='Gut Health Seminar' width="560" height="315" src="https://www.youtube.com/embed/6qlEbEOk2Nw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title='Gut Health Seminar' width="560" height="315" src="https://www.youtube.com/embed/6qlEbEOk2Nw" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </Paper>
         <Paper className={classes.paper}>
         <Typography variant={'h6'} className={classes.title}>Advanced Prevention For Caridovascular Disease</Typography>
-        <iframe title='Advanced Prevention For Caridovascular Disease' width="560" height="315" src="https://www.youtube.com/embed/ygBZP30y0Ew" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title='Advanced Prevention For Caridovascular Disease' width="560" height="315" src="https://www.youtube.com/embed/ygBZP30y0Ew" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </Paper>
         <Paper className={classes.paper}>
         <Typography variant={'h6'} className={classes.title}>2016 Nutrition Update</Typography>
-        <iframe title='2016 Nutrition Update' width="560" height="315" src="https://www.youtube.com/embed/zTLPHkq3BE8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title='2016 Nutrition Update' width="560" height="315" src="https://www.youtube.com/embed/zTLPHkq3BE8" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </Paper>
         <Paper className={classes.paper}>
         <Typography variant={'h6'} className={classes.title}>The Gut & Chronic Disease</Typography>
-        <iframe title='The Gut & Chronic Disease' width="560" height="315" src="https://www.youtube.com/embed/k8lpAVobDOU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title='The Gut & Chronic Disease' width="560" height="315" src="https://www.youtube.com/embed/k8lpAVobDOU" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </Paper>
       </Grid>
       {/* <Grid item>
@@ -82,9 +99,26 @@ const  TalksPage = ({ classes }) => (
         <Typography>Men's Health - Improving Vitality.</Typography>
         <Typography>Low-T, An Integrative Approach - Nutrition, Nutraceuticals, Exercise, and Optimal Hormone Replacement.</Typography>
       </Grid> */}
-    </Grid> 
+    </Grid>
     </SubLayout>
   </Layout>
 )
 
+export const query = graphql`
+  query PresentationPageQuery {
+    allFile(filter: { sourceInstanceName: { eq: "videos" } }) {
+      edges {
+        node {
+          id
+          extension
+          dir
+          modifiedTime
+          publicURL
+          name
+          relativePath
+        }
+      }
+    }
+  }
+`
 export default withRoot(withStyles(styles)(TalksPage))

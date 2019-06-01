@@ -10,6 +10,7 @@ function SEO({ description, lang, meta, keywords, title }) {
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description
+
         return (
           <Helmet
             htmlAttributes={{
@@ -50,17 +51,22 @@ function SEO({ description, lang, meta, keywords, title }) {
                 name: `twitter:description`,
                 content: metaDescription,
               },
+              {
+                name: 'keywords',
+                content: 'integrative medicine, functional medicine, natural healing, missouri, food as medicine, holistic medicine, mid-mo, central missouri, jefferson city' 
+              }
             ]
-              .concat(
-                keywords.length > 0
-                  ? {
-                      name: `keywords`,
-                      content: keywords.join(`, `),
-                    }
-                  : []
-              )
+              // .concat(
+              //   keywords.length > 0
+              //     ? {
+              //         name: `keywords`,
+              //         content: keywords.join(`, `),
+              //       }
+              //     : []
+              // )
               .concat(meta)}
-          />
+          >
+          </Helmet>
         )
       }}
     />
@@ -92,5 +98,4 @@ const detailsQuery = graphql`
         author
       }
     }
-  }
-`
+  }` 

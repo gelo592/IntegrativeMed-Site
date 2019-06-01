@@ -1,7 +1,12 @@
-build
-public
+/build
+public/*
 bucketpolicy.txt
 .cache
+src/static/videos/*
+secrets.json
+src/static/videos/Fasting_CRMC_2019-26.mp4
+/src/static/videos/Fasting_CRMC_2019-26.mp4
+
 ####### sass ########
 .sass-cache/
 *.css.map

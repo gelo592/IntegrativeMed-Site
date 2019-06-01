@@ -14,6 +14,11 @@ const styles = theme => ({
     height: 4,
     backgroundColor: colors.imc_blue.main,
   },
+  dividerInvisible: {
+    // margin: `${theme.spacing.unit * 2}px 20px`,
+    height: 0,
+    backgroundColor: 'rgba(0,0,0,0)'
+  },
   email: {
     marginTop: 10,
     marginBottom: 10,
@@ -31,7 +36,7 @@ class Footer extends React.Component {
   };
 
   renderLinks(link, sublinks, classes) {
-    return (<Grid item key={link}>
+    return (<Grid item key={link} style={{ marginBottom: 20 }}>
       <Typography style={{textDecoration: 'underline', color: colors.imc_blue.main, textTransform: 'uppercase', letterSpacing: 2, fontWeight: 700, fontSize: 18}}>{link}</Typography>
       {sublinks && sublinks.map(sub => (
         <Link key={sub.name} to={sub.link}><Typography className={classes.link}>{sub.displayName}</Typography></Link>
@@ -45,20 +50,30 @@ class Footer extends React.Component {
       <div>
       <Divider className={classes.dividerBlue} style={{ marginTop: 50}} />
       <Grid container style={{padding: 30}}>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <Grid container spacing={24} style={{}}>
             {menuLinks.map(link => (!link.isLink) && this.renderLinks(link.displayName, link.sublinks, classes))}
           </Grid>
         </Grid>
-        <Grid item xs={6} style={{display: 'flex', alignItems: 'flex-end', flex: 1, flexDirection: 'column'}}>
-          <a href={'tel:+15736325585'} className={classes.iconInfo}><Typography className={classes.link}>Clinic: (573) 632-5585</Typography></a>
-          <a href={'tel:+15736168899'} className={classes.iconInfo}><Typography className={classes.link}>Shoppe: (573) 616-8899</Typography></a>
-          <Typography className={classes.subtext}>Fax: 1(844) 736-2971</Typography>
-          <a href={'mailTo:info@imc-jcmo.com'} className={classes.email}><Typography className={classes.link}>info@imc-jcmo.com</Typography></a>
-          <div>
-          <IconButton component={'a'} href={'https://www.facebook.com/IMC.jcmo/'}><FacebookBox /></IconButton>
-          <IconButton component={'a'} href={'https://www.instagram.com/imc.jcmo/'}><Instagram /></IconButton>
-          </div>
+        <Grid item xs={12} md={6}>
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={6} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end'}}>
+              <Typography className={classes.subtext}>999 Diamond Ridge Suite 201</Typography>
+              <Typography className={classes.subtext}>Jefferson City, MO 65109</Typography>
+              <Divider className={classes.dividerInvisible} style={{ marginTop: 20 }} />
+              <Typography className={classes.subtext} style={{ marginBottom: 20 }}>Monday-Friday 7:30am-4pm</Typography>
+            </Grid>
+            <Grid item xs={12} md={6} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end'}}>
+              <a href={'tel:+15736325585'} className={classes.iconInfo}><Typography className={classes.link}>Clinic: (573) 632-5585</Typography></a>
+              <a href={'tel:+15736168899'} className={classes.iconInfo}><Typography className={classes.link}>Shoppe: (573) 616-8899</Typography></a>
+              <Typography className={classes.subtext}>Fax: 1(844) 736-2971</Typography>
+              <a href={'mailTo:info@imc-jcmo.com'} className={classes.email}><Typography className={classes.link}>info@imc-jcmo.com</Typography></a>
+              <div>
+                <IconButton component={'a'} href={'https://www.facebook.com/IMC.jcmo/'}><FacebookBox /></IconButton>
+                <IconButton component={'a'} href={'https://www.instagram.com/imc.jcmo/'}><Instagram /></IconButton>
+              </div>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
       <Divider className={classes.dividerBlue} />

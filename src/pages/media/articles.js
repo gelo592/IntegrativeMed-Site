@@ -55,10 +55,8 @@ class ArticlesPage extends React.Component {
   // };
   constructor(props) {
     super(props)
-    console.log(props.location);
     let currentKey = 'coq10';
     if (props && props.location && props.location.state && props.location.state.currentKey !== null) {
-      console.log("hi");
       currentKey = props.location.state.currentKey;
     } else if (props && props.location && props.location.search !== null) {
       currentKey = props.location.search.slice(1);
@@ -73,7 +71,6 @@ class ArticlesPage extends React.Component {
   }
 
   render() {
-    // console.log(this);
     let articles = {
       'coq10': {
         component: CoQ10Article,

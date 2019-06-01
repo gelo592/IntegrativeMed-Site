@@ -8,6 +8,7 @@ import logo from '../images/text_logo_w.svg'
 import { withStyles } from '@material-ui/core/styles';
 import { colors } from '../constants/constants';
 import withRoot from '../components/withRoot';
+import NewsletterSignup from '../components/newsletterSignup';
 
 const styles = theme => ({
   container: {
@@ -43,7 +44,8 @@ const styles = theme => ({
     color: colors.imc_blue.light,
     borderBottom: `solid ${colors.imc_blue.main} 6px`,
     paddingBottom: 10,
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+    fontWeight: 900,
   },
   para: {
     maxWidth: 280,
@@ -53,7 +55,7 @@ const styles = theme => ({
   },
   link: {
     textAlign: 'center',
-    fontSize: 16,
+    fontSize: 20,
     color: colors.imc_blue.main,
   },
   header: {
@@ -62,9 +64,16 @@ const styles = theme => ({
     textAlign: 'center',
     color: colors.imc_blue.main,
     borderBottom: `solid ${colors.imc_blue.main} 4px`,
+    fontWeight: 900,
+  },
+  label: {
+    fontSize: 16,
+    textAlign: 'center',
+    lineHeight: '20px',
+    paddingRight: 4,
   },
   subtext: {
-    fontSize: 16,
+    fontSize: 20,
     textAlign: 'center',
   },
   dividerBlue: {
@@ -88,10 +97,6 @@ const styles = theme => ({
   paperNoFlex: {
     padding: '30px 20px',
     width: '70%',
-    // display: 'flex',
-    // flex: 1,
-    // flexDirection: 'column',
-    // alignItems: 'center',
   },
   paper: {
     padding: '30px 20px',
@@ -106,17 +111,40 @@ const styles = theme => ({
     fontWeight: 700,
     letterSpacing: 2.2,
     marginTop: 20,
+  },
+  testimonal: {
+    lineHeight: 2.2,
+    fontSize: 16,
+    padding: '0 18px 18px 22px',
+  },
+  testimonalWriter: {
+    textAlign: 'left',
+    color: colors.imc_blue.main,
+    paddingLeft: 50,
+  },
+  quotes: {
+    fontSize: 32,
+    color: colors.imc_blue.main,
   }
 });
 
 class IndexPage extends React.Component {
-  state = { };
+  state = { renderSignup: false };
+
+  componentDidMount () {
+    window.setTimeout(() => this.setState({ renderSignup: true }), 2500);
+  }
+
+  _handleCloseSignup = () => {
+    this.setState({ renderSignup: false });
+  }
 
   render() {
     let { classes } = this.props;
     return (
       <Layout>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        {this.state.renderSignup && <NewsletterSignup handleClose={this._handleCloseSignup}/>}
+        <SEO title="Home" keywords={[]} />
         <div style={{ overflow: 'hidden', position: 'relative', flex: 1 }}>
           <div style={{ position: 'absolute', width: '100%', opacity: .6, top: '-15vw' }}>
             <Image />
@@ -133,33 +161,33 @@ class IndexPage extends React.Component {
           <div className={classes.infoSection}>
             <Paper className={classes.paperNoFlex}>
               <Grid container spacing={16} justify={'center'}>
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={12} md={4}>
                   <Typography className={classes.header} variant={'h5'}>Hours</Typography>
                   <Typography className={classes.subtext}>Monday-Friday</Typography>
                   <Typography className={classes.subtext}>7:30am-4pm</Typography>
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={12} md={4}>
                   <Typography className={classes.header} variant={'h5'}>Location</Typography>
                   <Typography className={classes.subtext}>999 Diamond Ridge Suite 201</Typography>
                   <Typography className={classes.subtext}>Jefferson City, MO 65109</Typography>
-                  <a href="https://goo.gl/maps/6lP2I" ><Typography className={classes.link}>Get Directions</Typography></a>
+                  <a href="https://goo.gl/maps/6lP2I" ><Typography style={{ fontSize: 16 }} className={classes.link}>Get Directions</Typography></a>
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={12} md={4}>
                   <Typography className={classes.header} variant={'h5'}>Contact</Typography>
                   <div className={classes.iconInfo}>
-                    <a href={'tel:+15736325585'} className={classes.iconInfo}>
-                      <Typography className={classes.subtext}>Clinic: </Typography>
-                      <Typography className={classes.link}> (573) 632-5585</Typography>
+                      <Typography className={classes.label}>Clinic:</Typography>
+                    <a href={'tel:+15736325585'}>
+                      <Typography className={classes.link}>(573) 632-5585</Typography>
                     </a>
                   </div>
                   <div className={classes.iconInfo}>
-                    <a href={'tel:+5736168899'} className={classes.iconInfo}>
-                      <Typography className={classes.subtext}>Shoppe: </Typography>
-                      <Typography className={classes.link}> (573) 616-8899</Typography>
+                      <Typography className={classes.label}>Shoppe:</Typography>
+                    <a href={'tel:+5736168899'}>
+                      <Typography className={classes.link}>(573) 616-8899</Typography>
                     </a>
                   </div>
                   <div className={classes.iconInfo}>
-                    <Typography className={classes.subtext}>Fax: </Typography>
+                    <Typography className={classes.label}>Fax: </Typography>
                     <Typography style={{ paddingLeft: 4 }} className={classes.subtext}>1(844) 736-2971</Typography>
                   </div>
                 </Grid>
@@ -203,9 +231,9 @@ class IndexPage extends React.Component {
           </div>
         </section>
         <Divider className={classes.divider} />
-        <section className={classes.sectionWrap}>
+        <section className={classes.sectionWrap} style={{ backgroundColor: colors.imc_yellow.light }}>
           <div className={classes.sectionBody}>
-            <Typography className={classes.sectionHeader} variant={'h4'}>what is integrative medicine?</Typography>
+            <Typography style={{ color: colors.imc_blue.dark, borderBottom: `solid ${colors.imc_blue.light} 6px` }} className={classes.sectionHeader} variant={'h4'}>what is integrative medicine?</Typography>
             {/* <Typography>
               Functional Medicine is a personalized, systems-oriented model that empowers
               patients and practitioners to achieve the highest expression of health
@@ -269,7 +297,7 @@ class IndexPage extends React.Component {
             </Grid>
           </div>
         </section>
-        {/* <Divider className={classes.divider} /> */}
+        <Divider className={classes.divider} />
         <section style={{backgroundColor: colors.imc_green.light}}  className={classes.sectionWrap}>
           <div className={classes.sectionBody}>
             <Typography style={{color: 'white'}} className={classes.sectionHeader} variant={'h4'}>food as medicine</Typography>
@@ -284,6 +312,36 @@ class IndexPage extends React.Component {
                     to reduce one's dependence on medications.
                   </Typography>
                 </Paper>
+              </Grid>
+            </Grid>
+          </div>
+        </section>
+        <Divider className={classes.divider} />
+        <section className={classes.sectionWrap} style={{ backgroundColor: colors.imc_blue.light }}>
+          <div className={classes.sectionBody}>
+            {/* <Typography style={{color: 'white'}} className={classes.sectionHeader} variant={'h4'}>testimonals</Typography> */}
+            <Grid container justify={'center'} spacing={16}>
+              <Grid item xs={10}>
+                {/* <div className={classes.item}> */}
+                  <Paper className={classes.paper} style={{ alignItems: 'flex-start' }}>
+                  <Typography className={classes.testimonal}>
+                    "Today I am blessed with good health and an active life because I was led by 
+                    friends to Integrative Medicine. I have Crohns disease which had gotten worse 
+                    and worse and was quickly becoming debilitating, with flares every month which 
+                    required trips to the ER and sometimes overnight stays at the hospital. I knew 
+                    my nutrition was terrible but believed I was eating/drinking what I could most 
+                    easily digest. After my initial visit with Jonie Hall, Nutrition and Lifestyle 
+                    Educator, in May 2017, I was quickly referred to Dr. Chris Link. I did not know 
+                    I was consuming foods which were causing more inflammation.  Since I have been 
+                    on the proper diet and supplements for my inflammation, I have not had a Crohns 
+                    flare for four months. I feel like a new person and my life is no longer 
+                    controlled by pain and emergency trips to the bathroom."
+                  </Typography>
+                  <Typography className={classes.testimonalWriter} variant={'h6'}>
+                    ~ Lola Wekenborg
+                  </Typography>
+                  </Paper>
+                {/* </div> */}
               </Grid>
             </Grid>
           </div>
